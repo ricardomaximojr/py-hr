@@ -16,8 +16,6 @@ Set up the project's directory structure and metadata
 6. Set the project up in source control and make your initial commit
 
 Ideal usage of the ``hr`` commands is this:
--------------------------------------------
-
 ::
     $ hr path/to/inventory.JSON
     Adding user 'kevin'
