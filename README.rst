@@ -17,7 +17,7 @@ Set up the project's directory structure and metadata
 
 Ideal usage of the ``hr`` commands is this:
 ::
-    $ hr path/to/inventory.JSON
+    $ hr path/to/inventory.json
     Adding user 'kevin'
     Added user 'kevin'
     Updating user 'lisa'
@@ -25,7 +25,7 @@ Ideal usage of the ``hr`` commands is this:
     Removing user 'alex'
     Removed user 'alex'
 
-The alternative uage of th CLI will be to pass a ``--export`` flag:
+The alternative usage of th CLI will be to pass a ``--export`` flag:
 ::
     $ hr --export path/to/inventory.json
 This ``--export`` flag won't take any arguments. Instead, you'll want to default
