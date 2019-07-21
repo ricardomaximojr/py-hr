@@ -17,6 +17,7 @@ Set up the project's directory structure and metadata
 
 Ideal usage of the ``hr`` commands is this:
 -------------------------------------------
+
 ::
     $ hr path/to/inventory.JSON
     Adding user 'kevin'
