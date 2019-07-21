@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: py-hr
+Version: 0.1.0
+Summary: Python package to manage users on a server based on an inventory JSON file.
+Home-page: UNKNOWN
+Author: Ricardo Maximo Jr
+Author-email: ricardomaximojr@gmail.com
+License: UNKNOWN
+Description: readme
+Platform: UNKNOWN
