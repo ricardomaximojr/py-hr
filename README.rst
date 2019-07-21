@@ -31,7 +31,8 @@ The alternative uage of th CLI will be to pass a ``--export`` flag:
 This ``--export`` flag won't take any arguments. Instead, you'll want to default
 the value of this field to ``False`` and set the value to ``True`` if the flag is present. Look at the action documentation to determine how you should go about doing this.
 
-For this exervise, Write a few tests before implementing the CLI parser. Ensure the following:
+For this exercise, Write a few tests before implementing the CLI parser. Ensure the following:
+----------------------------------------------------------------------------
 1. An error is raised if no arguments are passed to the parser.
 2. No error is raise if a path is given an argument.
 3. The ``export`` value is set to ``True`` if the ``--export`` flag is given.
