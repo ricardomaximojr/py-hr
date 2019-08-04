@@ -1,6 +1,6 @@
 User Management Python Package
 ==============================
-github_token: b36844d6e2031f40149514efdfdd716c066f16fc
+github_token: 0e1a186d1df8819b5136794f272eb088033e4110
 
 Python package to manage users on a server
 based on an "inventory" JSON file.

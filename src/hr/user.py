@@ -10,5 +10,12 @@ def add(user_dict):
         _groups_str(user_dict),
         user_dict['name']
     ])
+def remove(user_dict):
+    print(f"Removing user '{user_dict['name']}'")
+    subprocess.call([
+        'userdel',
+        '-r',
+        user_dict['name']
+    ])
 def _groups_str(user_dict):
     return ','.join(user_dict['groups'] or [])
