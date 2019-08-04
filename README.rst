@@ -36,3 +36,32 @@ For this exercise, Write a few tests before implementing the CLI parser. Ensure 
 1. An error is raised if no arguments are passed to the parser.
 2. No error is raise if a path is given an argument.
 3. The ``export`` value is set to ``True`` if the ``--export`` flag is given.
+
+Create a module in your package to work
+with user information. You'll want to be able
+to do the following:
+
+1. Received a list of user dictionaries and
+   ensure that the system's user match.
+2. Have a function that can create a user
+   with given information if no user exists
+   by that name 
+3. Have a function that can update a user
+   based on a user dictionary
+4. Have a function that can remove a user
+   with a given username
+5. The create, update, and remove functions
+   should print that they are creating/updating/Removing
+   the user before executing the command
+
+User info form:
+{
+    'name': 'kevin',
+    'groups': ['wheel', 'dev']
+    'password': '$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/'
+} 
+The password values will be SHA512 encrypted.
+Hint: generate encrypted password in Python that is usable with usermod -p with:
+import crypt
+crypt.crypt('password', crypt.mksalt(crypt.METHOD_SHA512))
+
