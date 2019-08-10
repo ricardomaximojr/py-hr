@@ -64,3 +64,52 @@ Hint: generate encrypted password in Python that is usable with usermod -p with:
 import crypt
 crypt.crypt('password', crypt.mksalt(crypt.METHOD_SHA512))
 
+User Inventory Parsing and Exporting
+====================================
+
+Package for interacting with the user inventory file.
+Inventory file holds user information.
+
+Module needs to implement:
+--------------------------
+1.  function to read given inventory file,
+    parse the JSON, and
+    return a list of user dictionaries
+2.  function that takes a path, and
+    produces inventory file based on the
+    current state of the system
+    An optional parameter could be
+    the specific users to export
+
+Related Python modules
+----------------------
+`json`  - interact with JSON from Python
+`grp`   - Group database
+`pwd`   - Password/user database
+`spwd`  - Shadow password database.
+          (Used to get current encrypted password)
+
+Example inventory JSON file:
+::
+    [
+    {
+        "name": "kevin",
+        "groups": ["wheel", "dev"],
+        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+    },
+    {
+        "name": "lisa",
+        "groups": ["wheel"],
+        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+    },
+    {
+        "name": "jim",
+        "groups": [],
+        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+    }
+    ]
+
+Hint:
+-----
+Rely on mocking to make interactions with modules like
+`grp`, `pwd`, and `spwd` consistent
