@@ -54,11 +54,12 @@ to do the following:
    the user before executing the command
 
 User info form:
-{
-    'name': 'kevin',
-    'groups': ['wheel', 'dev']
-    'password': '$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/'
-} 
+::
+    {
+        'name': 'kevin',
+        'groups': ['wheel', 'dev']
+        'password': '$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/'
+    } 
 The password values will be SHA512 encrypted.
 Hint: generate encrypted password in Python that is usable with usermod -p with:
 import crypt
@@ -83,30 +84,31 @@ Module needs to implement:
 
 Related Python modules
 ----------------------
-`json`  - interact with JSON from Python
-`grp`   - Group database
-`pwd`   - Password/user database
-`spwd`  - Shadow password database.
+
+``json``  - interact with JSON from Python
+``grp``   - Group database
+``pwd``   - Password/user database
+``spwd``  - Shadow password database.
           (Used to get current encrypted password)
 
 Example inventory JSON file:
 ::
     [
-    {
-        "name": "kevin",
-        "groups": ["wheel", "dev"],
-        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
-    },
-    {
-        "name": "lisa",
-        "groups": ["wheel"],
-        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
-    },
-    {
-        "name": "jim",
-        "groups": [],
-        "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
-    }
+        {
+            "name": "kevin",
+            "groups": ["wheel", "dev"],
+            "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+        },
+        {
+            "name": "lisa",
+            "groups": ["wheel"],
+            "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+        },
+        {
+            "name": "jim",
+            "groups": [],
+            "password": "$6$HXdlMJqcV8LZ1DIF$LCXVxmaI/ySqNtLI6b64LszjM0V5AfD.ABaUcf4j9aJWse2t3Jr2AoB1zZxUfCr8SOG0XiMODVj2ajcQbZ4H4/"
+        }
     ]
 
 Hint:
