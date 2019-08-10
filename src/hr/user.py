@@ -17,5 +17,15 @@ def remove(user_dict):
         '-r',
         user_dict['name']
     ])
+def update(user_dict):
+    print(f"updating user 'user_dict['name']")
+    subprocess.call([
+        'usermod',
+        '-p',
+        user_dict['password'],
+        '-G',
+        _groups_str(user_dict),
+        user_dict['name']
+    ])
 def _groups_str(user_dict):
     return ','.join(user_dict['groups'] or [])

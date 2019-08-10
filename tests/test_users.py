@@ -37,7 +37,20 @@ def test_user_remove(mocker):
         '-r',
         'kevin'
     ])
-def test_user_update():
-    pass
+def test_user_update(mocker):
+    '''
+    user.update use `usermod` command to 
+    set the group and password of the user
+    '''
+    mocker.patch('subprocess.call')
+    user.update(user_dict)
+    subprocess.call.assert_called_with([
+        'usermod',
+        '-p',
+        password,
+        '-G',
+        'sudo,adm',
+        'kevin'
+    ])
 def test_user_sync():
     pass
