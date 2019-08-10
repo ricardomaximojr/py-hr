@@ -52,5 +52,50 @@ def test_user_update(mocker):
         'sudo,adm',
         'kevin'
     ])
-def test_user_sync():
-    pass
+def test_user_sync(mocker):
+    '''
+    Given a list of user dictionaries, `user.sync(...)`
+    should create missing users,
+    remove extra non-system users,
+    and update existing users.
+    A list of existing usernames can be passed in
+    or default users will be used.
+    '''
+    existing_usernames = ['kevin', 'ric']
+    users_info = [
+        {
+            'name': 'krizelle',
+            'groups': ['sudo'],
+            'password': password
+        },
+        {
+            'name': 'kevin',
+            'groups': ['sudo', 'adm'],
+            'password': password
+        }
+    ]
+    mocker.patch('subprocess.call')
+    user.sync(users_info, existing_usernames)
+    subprocess.call.assert_has_calls([
+        mocker.call([
+            'useradd',
+            '-p',
+            password,
+            '-G',
+            'sudo',
+            'krizelle'
+        ]),
+        mocker.call([
+            'usermod',
+            '-p',
+            password,
+            '-G',
+            'sudo,adm',
+            'kevin'
+        ]),
+        mocker.call([
+            'userdel',
+            '-r',
+            'ric'
+        ])
+    ])

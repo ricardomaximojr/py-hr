@@ -5,6 +5,7 @@ COPY . /usr/src/py-hr
 
 RUN pip install -e .
 RUN pip install pytest pytest-mock
+RUN pip install ipython
 # RUN pip install pipenv pytest
 # RUN pipenv install pytest
 # RUN pipenv shell

@@ -9,6 +9,7 @@ pytest-mock = "*"
 
 [packages]
 pytest = "*"
+pwd = "*"
 
 [requires]
 python_version = "3.6"
