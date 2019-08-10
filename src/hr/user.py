@@ -39,14 +39,6 @@ def sync(user_list, existing_usernames=None):
     for username in existing_usernames:
         if not username in username_list:
             remove({'name': username})
-    # subprocess.call([
-    #     'usermod',
-    #     '-p',
-    #     user_dict['password'],
-    #     '-G',
-    #     _groups_str(user_dict),
-    #     user_dict['name']
-    # ])
 def _groups_str(user_dict):
     return ','.join(user_dict['groups'] or [])
 def _usernames():
