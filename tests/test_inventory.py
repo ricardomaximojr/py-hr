@@ -50,17 +50,4 @@ def test_inventory_dump(mocker):
     inventory.dump(dest_file.name, ['kevin', 'bob'])
 
     with open(dest_file.name) as f:
-        assert f.read() == '''
-        [
-            {
-                "name": "kevin",
-                "groups": ["sudo"],
-                "password": "password"
-            },
-            {
-                "name": "bob",
-                "groups": ["sudo", "adm"],
-                "password": "password"
-            }
-        ]
-        '''
+        assert f.read() == '''[{"name": "kevin", "groups": ["sudo"], "password": "password" }, { "name": "bob", "groups": ["sudo", "adm"], "password": "password"}]'''
