@@ -2,6 +2,8 @@ README.rst
 setup.py
 src/hr/__init__.py
 src/hr/cli.py
+src/hr/inventory.py
+src/hr/user.py
 src/py_hr.egg-info/PKG-INFO
 src/py_hr.egg-info/SOURCES.txt
 src/py_hr.egg-info/dependency_links.txt
