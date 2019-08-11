@@ -9,7 +9,7 @@ def load(inventory_filename):
 def dump(dest_filename, users_to_export_list=user_names()):
     users = []
     for user_name in users_to_export_list:
-        password = spwd.getspname(user_name).sp_pwd
+        password = spwd.getspnam(user_name).sp_pwd
         groups = _groups_for_user(user_name)
         users.append({
             'name': user_name,
