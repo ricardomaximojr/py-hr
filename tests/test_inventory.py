@@ -39,5 +39,28 @@ def test_inventory_dump(mocker):
         'spwd.getspnam',
         return_value=mocker.Mock(sp_pwd='password')
     )
+    mocker.patch(
+        'grp.getgrall',
+        return_value=[
+            mocker.Mock(gr_name='sudo', gr_member=['kevin', 'bob']),
+            mocker.Mock(gr_name='adm', gr_member=['bob'])
+        ]
+    )
 
     inventory.dump(dest_file.name, ['kevin', 'bob'])
+
+    with open(dest_file.name) as f:
+        assert f.read() == '''
+        [
+            {
+                "name": "kevin",
+                "groups": ["sudo"],
+                "password": "password"
+            },
+            {
+                "name": "bob",
+                "groups": ["sudo", "adm"],
+                "password": "password"
+            }
+        ]
+        '''
