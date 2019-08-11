@@ -4,12 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pytest = "*"
-pytest-mock = "*"
 
 [packages]
 pytest = "*"
-pwd = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.6"
