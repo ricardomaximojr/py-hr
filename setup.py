@@ -12,8 +12,8 @@ setup(
     author_email='ricardomaximojr@gmail.com',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    install_requires=[]
-    entry_points=(
+    install_requires=[],
+    entry_points={
         'console_scripts': 'py-hr=hr.cli:main'
-    )
+    }
 )
