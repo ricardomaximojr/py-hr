@@ -26,3 +26,13 @@ def create_parser():
         action='store_true'
     )
     return parser
+def main():
+    from hr import inventory, user
+
+    args = create_parser().parse_args()
+    if args.export:
+        inventory.dump(args.path)
+    else:
+        users_info = inventory.load(args.path)
+        user.sync(users_info)
+        

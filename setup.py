@@ -13,4 +13,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     install_requires=[]
+    entry_points=(
+        'console_scripts': 'py-hr=hr.cli:main'
+    )
 )
